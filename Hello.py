@@ -31,5 +31,8 @@ def show_order():
 def show_contact():
 	return render_template("contact.html")
 
+
+######### this is a small change made by tdsk
+
 if __name__ == '__main__':
    app.run()
