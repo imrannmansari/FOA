@@ -12,7 +12,7 @@ def show_index():
 
 @app.route('/index/<name>')
 def show_name(name):
-	dict = ['anshal', 'IMRAN']
+	dict = ['IMRAN','anshal']
 	print(dict[int(name)])
 	return render_template("index.html",name=dict[int(name)])
 
