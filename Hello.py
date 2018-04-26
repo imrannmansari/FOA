@@ -31,5 +31,14 @@ def show_order():
 def show_contact():
 	return render_template("contact.html")
 
+@app.route('/login')
+def show_login():
+	return render_template("login.html")
+
+
+@app.route('/register')
+def show_admin():
+	return render_template("register.html")
+
 if __name__ == '__main__':
-   app.run()
+   app.run(debug=True)
