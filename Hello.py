@@ -31,6 +31,7 @@ def show_order():
 def show_contact():
 	return render_template("contact.html")
 
+
 @app.route('/login')
 def show_login():
 	return render_template("login.html")
@@ -39,6 +40,8 @@ def show_login():
 @app.route('/register')
 def show_admin():
 	return render_template("register.html")
+
+######### this is a small change made by tdsk
 
 if __name__ == '__main__':
    app.run(debug=True)
