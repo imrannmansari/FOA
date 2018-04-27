@@ -1,13 +1,8 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8"/>
+
 <title>Food_Template Bootstrap Responsive Website Template | Home :: w3layouts</title>
 <link href="/static/css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -20,6 +15,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!--webfont-->
 <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Lobster+Two:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
 <!--Animation-->
 <script src="/static/js/wow.min.js"></script>
 <link href="/static/css/animate.css" rel='stylesheet' type='text/css' />
@@ -37,11 +33,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				});
 			});
 		</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
 </head>
 <body>
-	<meta charset="utf-8"/>
-	{{name}}
-    <!-- header-section-starts -->
+	<!-- header-section-starts -->
 	<div class="header">
 		<div class="container">
 			<div class="top-header">
@@ -284,7 +281,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 		<div class="popular-restaurents" id="Popular-Restaurants">
 			<div class="container">
-				<div class="col-md-4 top-restaurents">
+				<!-- <div class="col-md-4 top-restaurents">
 					<div class="top-restaurent-head">
 						<h3>Top Restaurants</h3>
 					</div>
@@ -311,44 +308,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="clearfix"></div>
 						</div>
 					</div>
-				</div>
-				<div class="col-md-8 top-cuisines">
+				</div> -->
+				<div class="col-md-12 top-cuisines">
 					<div class="top-cuisine-head">
-						<h3>Top Cuisines</h3>
+						<h3>Top Restaurants</h3>
 					</div>
 					<div class="top-cuisine-grids">
-						<div class="top-cuisine-grid wow bounceIn" data-wow-delay="0.4s">
-						    <a href=""><img src="/static/images/cuisine1.jpg" class="img-responsive" alt="" /> </a>
-							<label>Cuisine Name</label>
+						{% for restaurant in restaurants %}
+					    <div class="col-md-3 top-cuisine-grid wow bounceIn" data-wow-delay="0.4s">
+						    <a href="/restaurants/{{restaurant.ID}}"><img src="{{restaurant.LOGO}}" style="height:122px; width:214px" class="img-responsive" alt="" /> </a>
+							<label style="display:block;">{{restaurant.NAME}}</label>
 					    </div>
-						<div class="top-cuisine-grid wow bounceIn" data-wow-delay="0.4s">
-						    <a href=""><img src="/static/images/cuisine2.jpg" class="img-responsive" alt="" /> </a>
-							<label>Cuisine Name</label>
-					    </div>
-						<div class="top-cuisine-grid wow bounceIn" data-wow-delay="0.4s">
-						    <a href=""><img src="/static/images/cuisine3.jpg" class="img-responsive" alt="" /> </a>
-							<label>Cuisine Name</label>
-					    </div>
-						<div class="top-cuisine-grid nth-grid wow bounceIn" data-wow-delay="0.4s">
-						    <a href=""><img src="/static/images/cuisine4.jpg" class="img-responsive" alt="" /> </a>
-							<label>Cuisine Name</label>
-					    </div>
-						<div class="top-cuisine-grid nth-grid1 wow bounceIn" data-wow-delay="0.4s">
-						    <a href=""><img src="/static/images/cuisine5.jpg" class="img-responsive" alt="" /> </a>
-							<label>Cuisine Name</label>
-					    </div>
-						<div class="top-cuisine-grid nth-grid1 wow bounceIn" data-wow-delay="0.4s">
-						    <a href=""><img src="/static/images/cuisine6.jpg" class="img-responsive" alt="" /> </a>
-							<label>Cuisine Name</label>
-					    </div>
-						<div class="top-cuisine-grid nth-grid1 wow bounceIn" data-wow-delay="0.4s">
-						    <a href=""><img src="/static/images/cuisine7.jpg" class="img-responsive" alt="" /> </a>
-							<label>Cuisine Name</label>
-					    </div>
-						<div class="top-cuisine-grid nth-grid nth-grid1 wow bounceIn" data-wow-delay="0.4s">
-						    <a href=""><img src="/static/images/cuisine8.jpg" class="img-responsive" alt="" /> </a>
-							<label>Cuisine Name</label>
-					    </div>
+						{% endfor %}
 						<div class="clearfix"></div>
 					</div>
 				</div>

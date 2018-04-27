@@ -107,10 +107,10 @@ height: 'auto',
 			<div class="container">
 				<div class="top-menu">
 					<ul>
-						<li><a href="index">Home</a></li>|
-						<li><a href="restaurants">Popular Restaurants</a></li>|
-						<li class="active"><a href="order">Order</a></li>|
-						<li><a href="contact">contact</a></li>
+						<li><a href="/index">Home</a></li>|
+						<li><a href="/restaurants">Popular Restaurants</a></li>|
+						<li class="active"><a href="/order">Order</a></li>|
+						<li><a href="/contact">contact</a></li>
 						<div class="clearfix"></div>
 					</ul>
 				</div>
@@ -127,162 +127,190 @@ height: 'auto',
 		</div>
 		</div>
 	<!-- header-section-ends -->
-	<div class="order-section-page">
-		<div class="ordering-form">
-			<div class="container">
-			<div class="order-form-head text-center wow bounceInLeft" data-wow-delay="0.4s">
-						<h3>Restaurant Order Form</h3>
-						<p>Ordering Food Was Never So Simple !!!!!!</p>
-					</div>
-				<div class="col-md-6 order-form-grids">
-
-					<div class="order-form-grid  wow fadeInLeft" data-wow-delay="0.4s">
-						<h5>Order Information</h5>
-								<span>Type of Order</span>
-								 <div class="dropdown-button">
-            			<select class="dropdown" tabindex="9" data-settings='{"wrapperClass":"flat"}'>
-            			<option value="0">Pick up</option>
-						<option value="1">Delivery</option>
-						<option value="2">Catering</option>
-					  </select>
-					</div>
-		              <span>Restaurant Location</span>
-					   <div class="dropdown-button wow">
-            			<select class="dropdown" tabindex="9" data-settings='{"wrapperClass":"flat"}'>
-            			<option value="0">Restaurent A,144 East MG Road Indore</option>
-						<option value="1">Restaurent B,64 Paarli Hills IndoreIndore</option>
-					  </select>
-					</div>
-					<span>Location name</span>
-								 <div class="dropdown-button">
-            			<select class="dropdown" tabindex="9" data-settings='{"wrapperClass":"flat"}'>
-            			<option value="0"> Secunderabad</option>
-						<option value="1">Location-1</option>
-						<option value="2">Location-2</option>
-					  </select>
-					</div>
-					<span>cuisine-name</span>
-					   <div class="dropdown-button">
-            			<select class="dropdown" tabindex="9" data-settings='{"wrapperClass":"flat"}'>
-            			<option value="0">cuisine-name</option>
-						<option value="1">cuisine-name</option>
-						<option value="2">cuisine-name</option>
-					  </select>
-					</div>
-					<input type="text" class="text" value="Time" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Time';}"><br>
-					<div class="wow swing animated" data-wow-delay= "0.4s">
-					<input type="button" value="order now">
-					</div>
-					</div>
-				</div>
-				<div class="col-md-6 ordering-image wow bounceIn" data-wow-delay="0.4s">
-					<img src="/static/images/order.jpg" class="img-responsive" alt="" />
-				</div>
-			</div>
-		</div>
-<div class="special-offers-section">
-			<div class="container">
-				<div class="special-offers-section-head text-center dotted-line">
-					<h4>Special Offers</h4>
-				</div>
-				<div class="special-offers-section-grids">
-				 <div class="m_3"><span class="middle-dotted-line"> </span> </div>
-				   <div class="container">
-					  <ul id="flexiselDemo3">
-						<li>
-							<div class="offer">
-								<div class="offer-image">
-									<img src="/static/images/p1.jpg" class="img-responsive" alt=""/>
-								</div>
-								<div class="offer-text">
-									<h4>Olister Combo pack lorem</h4>
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
-									<input type="button" value="Grab It">
-									<span></span>
-								</div>
-								<div class="clearfix"></div>
-							</div>
-						</li>
-						<li>
-							<div class="offer">
-								<div class="offer-image">
-									<img src="/static/images/p2.jpg" class="img-responsive" alt=""/>
-								</div>
-								<div class="offer-text">
-									<h4>Chicken Jumbo pack lorem</h4>
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
-									<input type="button" value="Grab It">
-									<span></span>
-								</div>
-								<div class="clearfix"></div>
-							</div>
-						</li>
-						<li>
-							<div class="offer">
-								<div class="offer-image">
-									<img src="/static/images/p1.jpg" class="img-responsive" alt=""/>
-								</div>
-								<div class="offer-text">
-									<h4>Crab Combo pack lorem</h4>
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
-									<input type="button" value="Grab It">
-									<span></span>
-								</div>
-
-								<div class="clearfix"></div>
-								</div>
-						</li>
-						<li>
-							<div class="offer">
-								<div class="offer-image">
-									<img src="/static/images/p2.jpg" class="img-responsive" alt=""/>
-								</div>
-								<div class="offer-text">
-									<h4>Chicken Jumbo pack lorem</h4>
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
-									<input type="button" value="Grab It">
-									<span></span>
-								</div>
-
-								<div class="clearfix"></div>
-								</div>
-					    </li>
-					 </ul>
-				 <script type="text/javascript">
-					$(window).load(function() {
-
-						$("#flexiselDemo3").flexisel({
-							visibleItems: 3,
-							animationSpeed: 1000,
-							autoPlay: true,
-							autoPlaySpeed: 3000,
-							pauseOnHover: true,
-							enableResponsiveBreakpoints: true,
-							responsiveBreakpoints: {
-								portrait: {
-									changePoint:480,
-									visibleItems: 1
-								},
-								landscape: {
-									changePoint:640,
-									visibleItems: 2
-								},
-								tablet: {
-									changePoint:768,
-									visibleItems: 3
-								}
-							}
-						});
-
-					});
-				    </script>
-				    <script type="text/javascript" src="/static/js/jquery.flexisel.js"></script>
-				</div>
-			</div>
-		</div>
-		</div>
-	</div>
 	<!-- footer-section-starts -->
+	<script>
+
+	$(document).ready(function() {
+		$("#orderDiv").hide();
+	});
+
+
+	var orderList = [];
+	var add2cart = function(item) {
+		var i;
+		for(i=0;i<orderList.length;i++) {
+			if(orderList[i].name === item.ITEM_ID){
+				orderList[i].quantity += 1;
+				break;		
+			}
+		}
+
+		if(i == orderList.length) {
+			var order = {quantity:1, name:item.ITEM_ID ,cost:item.COST};
+			orderList.push(order);
+		}
+			
+		rerenderTable();
+	}
+
+	var rerenderTable = function() {
+		var content = "<tr>"+
+						"<th>Name</th>"+
+						"<th>Quantity</th>"+
+						"<th>Price</th>"+
+					"</tr>";
+
+		for(var i=0;i<orderList.length;i++){
+			content += "<tr><td>"+orderList[i].name+"</td>"+
+				"<td><a style='margin-right:3px;' href='javascript:decreaseQuantity("+" &quot;"+orderList[i].name+"&quot;"+")'><img src='/static/images/minus-logo.jpg' height='20px' width='20px'></a><b>"+orderList[i].quantity+"</b><a style='margin-left:3px;' href='javascript:increaseQuantity("+"&quot;"+orderList[i].name+"&quot;"+")'><img src='/static/images/plus-logo.jpg' height='20px' width='20px'></a></td>"+
+				"<td>"+orderList[i].cost * orderList[i].quantity+"</td></tr>";
+		}
+		console.log(content);
+		$("#orderTable").html(content);
+		$("#orderDiv").show();
+	}
+
+	var increaseQuantity = function(item_name) {
+		var i;
+		console.log(item_name);
+
+		for(i=0;i<orderList.length;i++) {
+			if(orderList[i].name == item_name) 
+				orderList[i].quantity += 1;
+		}
+		rerenderTable();
+	}
+
+	var decreaseQuantity = function(item_name) {
+		var i;
+		for(i=0;i<orderList.length;i++) {
+			console.log(orderList[i]);
+			if(orderList[i].name == item_name) {
+				if(orderList[i].quantity > 1) {
+				orderList[i].quantity -= 1;
+				break;	
+				}
+				else{
+					orderList.splice(i,1);
+					break;
+				}
+			}
+		}
+		rerenderTable();
+	}
+
+
+	</script>
+	<div class="container">
+		<br>
+		<div class="col-md-8">
+		<h3>{{restaurant.NAME}}</h3>
+		</br>
+			<table class=" table table-striped">
+				<tr>
+					<th>Cuisine</th>
+					<th>Price</th>
+					<th>Type</th>
+					<th><img src="/static/images/bag.png"></th>
+				</tr>
+				{% for item in menu %}
+				<tr>
+					<td>{{item.ITEM_ID}}</td>
+					<td>{{item.COST}}</td>
+					<td>{{item.CUISINE_TYPE}}</td>
+					<td><a href='javascript:add2cart({{item}})'><img src="/static/images/plus.jpg" height="30px" width="30px"></a></td>
+				</tr>
+				{% endfor %}
+			</table>
+		</div>
+		<div class="col-md-4" id="orderDiv">
+			<h3>Order</h3>
+			</br>
+			<table class="table table-striped" id="orderTable">
+			</table>
+				<button type="button" class="btn btn-danger">Place Order</button>
+			
+			</br></br>	
+			<table class="table"> 
+			      <tr>
+			        <td colspan="3"><strong style="color:#FF0000; font-size:16px;">Shipping Charges </strong></td>
+			      </tr>
+			      <tr>
+			        <td width="377">&nbsp;Paradise Restaurant</td>
+			        <td width="7">:</td>
+			        <td align="center">50</td>
+			      </tr>
+			      <tr>
+			        <td>&nbsp;Bawarchi </td>
+			      <td>:</td>
+			      <td align="center">40</td>
+			      </tr>
+			      <tr>
+			      <td>&nbsp;Aahar</td>
+			      <td>:</td>
+			      <td align="center">40</td>
+			      </tr>
+			      <tr>
+			      <td>&nbsp;Biryanimahal	</td>
+			      <td>: </td>
+			      <td align="center">40</td>
+			      </tr>
+			      
+			      <tr>
+			      <td>&nbsp;Elephant</td>
+			      <td>:</td>
+			      <td align="center">30</td>
+			      </tr>
+			      <tr>
+			      <td>&nbsp;Dominos Pizza</td>
+			      <td>:</td>
+			      <td align="center">40</td>
+			      </tr>
+			      <tr>
+			        <td>&nbsp;McDonalds</td>
+			        <td>:</td>
+			        <td align="center">40</td>
+			      </tr>
+			      <tr>
+			        <td>&nbsp;GRILL 9</td>
+			        <td>:</td>
+			        <td align="center">40</td>
+			      </tr>
+			      <tr>
+			        <td>&nbsp;KFC</td>
+			        <td>:</td>
+			        <td align="center">40</td>
+			      </tr>
+			      <tr>
+			        <td>&nbsp;SUBWAY</td>
+			        <td>:</td>
+			        <td align="center">40</td>
+			      </tr>
+			      <tr>
+			        <td>&nbsp;Caafe Countinental</td>
+			        <td>:</td>
+			        <td align="center">30</td>
+			      </tr>
+			      <tr>
+			      <td>&nbsp;Mayabazar</td>
+			      <td>:</td>
+			      <td align="center">40</td>
+			      </tr>
+			      <tr>
+			        <td colspan="3">
+			       <br>
+			 		&nbsp;<b>Note :</b><br>
+					<br>
+					&nbsp;At time orders from two or more restaurants the shipping <br>
+					&nbsp;charges would be first restaurant 100% and rest of the <br>
+					&nbsp;restaurants 50%.applicable.</td>
+			      </tr>
+      		</table>
+		</div>
+			
+		<br>
+	</div>
+	<br>
 	<div class="footer">
 		<div class="container">
 			<p class="wow fadeInLeft" data-wow-delay="0.4s">&copy; 2014  All rights  Reserved | Template by &nbsp;<a href="http://w3layouts.com" target="target_blank">W3Layouts</a></p>
