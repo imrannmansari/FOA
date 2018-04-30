@@ -35,7 +35,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				});
 			});
 		</script>		
-<script src="js/simpleCart.min.js"> </script>	
+<script src="/static/js/cookie.js"></script>	
 </head>
 <body>
     <!-- header-section-starts -->
@@ -50,10 +50,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<div class="header-right">
 						<div class="cart box_1">
-							<a href="checkout.html">
-								<h3> <span class="simpleCart_total"> $0.00 </span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span> items)<img src="images/bag.png" alt=""></h3>
+							<a href="/checkout">
+								<h3> Rs.<span class="simpleCart_total" id="simpleCart_total">
+									<script>
+										if(getCookie('totalAmnt') == '')
+											document.write("0.00");
+										else
+											document.write(getCookie('totalAmnt'));
+									</script>
+								</span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 
+										<script>
+										if(getCookie('orderList') == '')
+											document.write("0");
+										else
+											document.write($.parseJSON(getCookie('totalAmnt')).length);
+									</script>
+								 </span> items)<img src="/static/images/bag.png" alt=""></h3>
 							</a>	
-							<p><a href="javascript:;" class="simpleCart_empty">Empty card</a></p>
+							<p><a href="javascript:emptyCart()" class="simpleCart_empty">Empty card</a></p>
 							<div class="clearfix"> </div>
 						</div>
 					</div>

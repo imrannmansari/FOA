@@ -35,7 +35,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				});
 			});
 		</script>
-<script src="/static/js/simpleCart.min.js"> </script>
+<script src="/static/js/cookie.js"></script>
 </head>
 <body>
     <!-- header-section-starts -->
@@ -50,10 +50,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<div class="header-right">
 						<div class="cart box_1">
-							<a href="checkout">
-								<h3> <span class="simpleCart_total"> $0.00 </span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span> items)<img src="/static/images/bag.png" alt=""></h3>
+							<a href="/checkout">
+								<h3> Rs.<span class="simpleCart_total" id="simpleCart_total">
+									<script>
+										if(getCookie('totalAmnt') == '')
+											document.write("0.00");
+										else
+											document.write(getCookie('totalAmnt'));
+									</script>
+								</span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 
+										<script>
+										if(getCookie('orderList') == '')
+											document.write("0");
+										else
+											document.write($.parseJSON(getCookie('totalAmnt')).length);
+									</script>
+								 </span> items)<img src="/static/images/bag.png" alt=""></h3>
 							</a>
-							<p><a href="javascript:;" class="simpleCart_empty">Empty card</a></p>
+							<p><a href="javascript:emptyCart()" class="simpleCart_empty">Empty card</a></p>
 							<div class="clearfix"> </div>
 						</div>
 					</div>
@@ -89,43 +103,43 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="main">
 	   <div class="container">
 		  <div class="register">
-		  	  <form>
-				 <div class="register-top-grid">
-					<h3>PERSONAL INFORMATION</h3>
+		  	  	<div class="clearfix"> </div>
+				<div class="register-but">
+				   <form action="/register_customer" method = "POST">
+				 	<div class="register-top-grid">
+					<h3>Registration Form</h3>
 					 <div class="wow fadeInLeft" data-wow-delay="0.4s">
 						<span>First Name<label>*</label></span>
-						<input type="text">
+						<input type="text" name="fname" required>
 					 </div>
 					 <div class="wow fadeInRight" data-wow-delay="0.4s">
 						<span>Last Name<label>*</label></span>
-						<input type="text">
+						<input type="text" name="lname" required>
 					 </div>
 					 <div class="wow fadeInRight" data-wow-delay="0.4s">
 						 <span>Email Address<label>*</label></span>
-						 <input type="text">
+						 <input type="text" name="email" required>
 					 </div>
-					 <div class="clearfix"> </div>
-					   <a class="news-letter" href="#">
-						 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Sign Up for Newsletter</label>
-					   </a>
+					<div class="wow fadeInRight" data-wow-delay="0.4s">
+						 <span>Phone No : <label>*</label></span>
+						 <input type="text" name="phone" required>
 					 </div>
-				     <div class="register-bottom-grid">
-						    <h3>LOGIN INFORMATION</h3>
-							 <div class="wow fadeInLeft" data-wow-delay="0.4s">
-								<span>Password<label>*</label></span>
-								<input type="password">
-							 </div>
-							 <div class="wow fadeInRight" data-wow-delay="0.4s">
-								<span>Confirm Password<label>*</label></span>
-								<input type="password">
-							 </div>
+					 <div class="wow fadeInRight" data-wow-delay="0.4s">
+						 <span>Address<label>*</label></span>
+						 <input type="text" name="address" required>
 					 </div>
-				</form>
-				<div class="clearfix"> </div>
-				<div class="register-but">
-				   <form>
+					 <div class="wow fadeInRight" data-wow-delay="0.4s">
+						 <span>Username<label>*</label></span>
+						 <input type="text" name="username" required>
+					 </div>
+			 		 <div class="wow fadeInRight" data-wow-delay="0.4s">
+						 <span>Password<label>*</label></span>
+						 <input type="password" name="password" required>
+					 </div>
+					 <div class="wow fadeInRight" data-wow-delay="0.4s">
 					   <input type="submit" value="submit">
 					   <div class="clearfix"> </div>
+					 </div>  
 				   </form>
 				</div>
 		   </div>

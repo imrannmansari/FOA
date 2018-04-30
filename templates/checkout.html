@@ -8,11 +8,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 <head>
 <title>Food_Template Bootstrap Responsive Website Template | Checkout :: w3layouts</title>
-<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="/static/css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery.min.js"></script>
+<script src="/static/js/jquery.min.js"></script>
 <!-- Custom Theme files -->
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <!-- Custom Theme files -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -20,13 +20,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Lobster+Two:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 <!--Animation-->
-<script src="js/wow.min.js"></script>
-<link href="css/animate.css" rel='stylesheet' type='text/css' />
+<script src="/static/js/wow.min.js"></script>
+<link href="/static/css/animate.css" rel='stylesheet' type='text/css' />
 <script>
 	new WOW().init();
 </script>
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript" src="/static/js/move-top.js"></script>
+<script type="text/javascript" src="/static/js/easing.js"></script>
 <script type="text/javascript">
 			jQuery(document).ready(function($) {
 				$(".scroll").click(function(event){		
@@ -35,7 +35,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				});
 			});
 		</script>		
-<script src="js/simpleCart.min.js"> </script>	
+<script src="/static/js/cookie.js"></script>	
 </head>
 <body>
     <!-- header-section-starts -->
@@ -43,17 +43,30 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container">
 			<div class="top-header">
 				<div class="logo">
-					<a href="index.html"><img src="images/logo.png" class="img-responsive" alt="" /></a>
+					<a href="index.html"><img src="/static/images/logo.png" class="img-responsive" alt="" /></a>
 				</div>
 				<div class="queries">
 					<p>Questions? Call us Toll-free!<span>1800-0000-7777 </span><label>(11AM to 11PM)</label></p>
 				</div>
 				<div class="header-right">
 						<div class="cart box_1">
-							<a href="checkout.html">
-								<h3> <span class="simpleCart_total"> $0.00 </span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span> items)<img src="images/bag.png" alt=""></h3>
+							<a href="/checkout">
+								<h3> Rs.<span class="simpleCart_total" id="simpleCart_total">
+									<script>
+										if(getCookie('totalAmnt') == '')
+											document.write("0.00");
+										else
+											document.write(getCookie('totalAmnt'));
+									</script>
+								</span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 
+										<script>
+										if(getCookie('orderList') == '')
+											document.write("0");
+										else
+											document.write($.parseJSON(getCookie('totalAmnt')).length);
+									</script>
+								 </span> items)<img src="/static/images/bag.png" alt=""></h3>
 							</a>	
-							<p><a href="javascript:;" class="simpleCart_empty">Empty card</a></p>
 							<div class="clearfix"> </div>
 						</div>
 					</div>
@@ -64,17 +77,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="container">
 				<div class="top-menu">
 					<ul>
-						<li><a href="index.html">Home</a></li>|
-						<li class="active"><a href="restaurants.html">Popular Restaurants</a></li>|
-						<li><a href="order.html">Order</a></li>|
-						<li><a href="contact.html">contact</a></li>
+						<li><a href="/index">Home</a></li>|
+						<li class="active"><a href="/restaurants">Popular Restaurants</a></li>|
+						<li><a href="/order">Order</a></li>|
+						<li><a href="/contact">contact</a></li>
 						<div class="clearfix"></div>
 					</ul>
 				</div>
 				<div class="login-section">
 					<ul>
-						<li><a href="login.html">Login</a>  </li> |
-						<li><a href="register.html">Register</a> </li> |
+						<li><a href="/login">Login</a>  </li> |
+						<li><a href="/register">Register</a> </li> |
 						<li><a href="#">Help</a></li>
 						<div class="clearfix"></div>
 					</ul>
@@ -88,101 +101,194 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- header-section-ends -->
 	<!-- content-section-starts -->
 	<!-- checkout -->
-<div class="cart-items">
-	<div class="container">
-			 <h1>My Shopping Bag (3)</h1>
-				<script>$(document).ready(function(c) {
-					$('.close1').on('click', function(c){
-						$('.cart-header').fadeOut('slow', function(c){
-							$('.cart-header').remove();
-						});
-						});	  
-					});
-			   </script>
-			 <div class="cart-header">
-				 <div class="close1"> </div>
-				 <div class="cart-sec simpleCart_shelfItem">
-						<div class="cart-item cyc">
-							 <img src="images/cuisine3.jpg" class="img-responsive" alt="">
-						</div>
-					   <div class="cart-item-info">
-						<h3><a href="#"> Lorem Ipsum is not simply </a><span>Pickup time:</span></h3>
-						<ul class="qty">
-							<li><p>Min. order value:</p></li>
-							<li><p>FREE delivery</p></li>
-						</ul>
-							 <div class="delivery">
-							 <p>Service Charges : $10.00</p>
-							 <span>Delivered in 1-1:30 hours</span>
-							 <div class="clearfix"></div>
-				        </div>	
-					   </div>
-					   <div class="clearfix"></div>
-											
-				  </div>
-			 </div>
-			 <script>$(document).ready(function(c) {
-					$('.close2').on('click', function(c){
-							$('.cart-header2').fadeOut('slow', function(c){
-						$('.cart-header2').remove();
-					});
-					});	  
-					});
-			 </script>
-			 <div class="cart-header2">
-				 <div class="close2"> </div>
-				  <div class="cart-sec simpleCart_shelfItem">
-						<div class="cart-item cyc">
-							 <img src="images/cuisine2.jpg" class="img-responsive" alt="">
-						</div>
-					   <div class="cart-item-info">
-						<h3><a href="#"> Lorem Ipsum is not simply </a><span>Pickup time:</span></h3>
-						<ul class="qty">
-							<li><p>Min. order value:</p></li>
-							<li><p>FREE delivery</p></li>
-						</ul>
-							 <div class="delivery">
-							 <p>Service Charges : $10.00</p>
-							 <span>Delivered in 1-1:30 hours</span>
-							 <div class="clearfix"></div>
-				        </div>	
-					   </div>
-					   <div class="clearfix"></div>
-											
-				  </div>
-			  </div>
-			  <script>$(document).ready(function(c) {
-					$('.close3').on('click', function(c){
-							$('.cart-header3').fadeOut('slow', function(c){
-						$('.cart-header3').remove();
-					});
-					});	  
-					});
-			 </script>
-			  <div class="cart-header3">
-				 <div class="close3"> </div>
-				  <div class="cart-sec simpleCart_shelfItem">
-						<div class="cart-item cyc">
-							 <img src="images/cuisine1.jpg" class="img-responsive" alt="">
-						</div>
-					   <div class="cart-item-info">
-						<h3><a href="#"> Lorem Ipsum is not simply </a><span>Pickup time:</span></h3>
-						<ul class="qty">
-							<li><p>Min. order value:</p></li>
-							<li><p>FREE delivery</p></li>
-						</ul>
-							 <div class="delivery">
-							 <p>Service Charges : $10.00</p>
-							 <span>Delivered in 1-1:30 hours</span>
-							 <div class="clearfix"></div>
-				        </div>	
-					   </div>
-					   <div class="clearfix"></div>
-											
-				  </div>
-			  </div>		
-		 </div>
-		 </div>
+ <script>
+	var orderList = [];
+	$(document).ready(function() {
+		$("#orderDiv").hide();
+		var orderListCookie = getCookie('orderList');
+		console.log("orderListCookie : " + orderListCookie ); 
+		if(orderListCookie != "") {
+			orderList = $.parseJSON(orderListCookie);
+			console.log("orderList : " + orderList);
+			console.log("rerenderTable");
+			rerenderTable();
+		} else {
+			$("#nothingInCartMsg").html('Nothing added to cart');
+			orderList = [];
+		}
+	});
+
+	var rerenderTable = function() {
+		setCookie('orderList',JSON.stringify(orderList));
+		var content = "<tr>"+
+						"<th>Restaurant</th>"+
+						"<th>Name</th>"+
+						"<th>Quantity</th>"+
+						"<th>Price</th>"+
+					"</tr>";
+
+		var totalAmnt = 0;
+		for(var i=0;i<orderList.length;i++){
+			content += "<tr><td>"+orderList[i].restaurant+"</td>"+"<td>"+orderList[i].name+"</td>"+
+				"<td><a style='margin-right:3px;' href='javascript:decreaseQuantity("+" &quot;"+orderList[i].name+"&quot;"+")'><img src='/static/images/minus-logo.jpg' height='20px' width='20px'></a><b>"+orderList[i].quantity+"</b><a style='margin-left:3px;' href='javascript:increaseQuantity("+"&quot;"+orderList[i].name+"&quot;"+")'><img src='/static/images/plus-logo.jpg' height='20px' width='20px'></a></td>"+
+				"<td>"+orderList[i].cost * orderList[i].quantity+"</td></tr>";
+			totalAmnt += orderList[i].cost * orderList[i].quantity;
+		}
+
+		console.log(content);
+		$("#orderTable").html(content);
+		console.log('totalAmnt '+ totalAmnt);
+		$("#simpleCart_total").html(totalAmnt);
+		$("#simpleCart_quantity").html(orderList.length);
+		setCookie('totalAmnt',totalAmnt);
+		$("#orderDiv").show();
+	}
+
+	var increaseQuantity = function(item_name) {
+		var i;
+		console.log(item_name);
+
+		for(i=0;i<orderList.length;i++) {
+			if(orderList[i].name == item_name) 
+				orderList[i].quantity += 1;
+		}
+		rerenderTable();
+	}
+
+	var decreaseQuantity = function(item_name) {
+		var i;
+		for(i=0;i<orderList.length;i++) {
+			console.log(orderList[i]);
+			if(orderList[i].name == item_name) {
+				if(orderList[i].quantity > 1) {
+				orderList[i].quantity -= 1;
+				break;	
+				}
+				else{
+					orderList.splice(i,1);
+					break;
+				}
+			}
+		}
+		rerenderTable();
+	}
+
+	var placeOrder = function() {
+		/*console.log('Placing Order with payload : ');
+		
+		var nameList = orderList.map(function(order) {
+  			return order['name'];
+		});
+
+		var quantityList = orderList.map(function(order) {
+  			return order['quantity'];
+		});
+		
+		console.log(JSON.stringify(nameList));
+		console.log(JSON.stringify(quantityList));
+
+		var orderStringify = JSON.stringify(orderList);
+
+		console.log(orderStringify);
+		$.ajax({
+           type: 'post',
+           url: '/place_order',
+           contentType: 'application/json',
+           data: orderStringify,
+           success: function (data) {
+                       console.log('success');
+           },
+           error: function (data) {
+           console.log('error');
+           console.log(JSON.stringify(data));
+          }
+     });*/
+		console.log(orderList);
+
+		var username = getCookie('username');
+		console.log("username is " + username);
+		if(username != "") {
+			$.ajax({
+			  type: "POST",
+			  url: '/place_order',
+			  username:username,
+			  data: JSON.stringify(orderList),
+			  success: function (res) {
+			  	   alert("Your Order has been placed !!!");
+            	   console.log('success');
+	           },
+	           error: function (res) {
+	           console.log('error');
+	           console.log(res);
+	          }
+			});
+		}
+		else {
+			setCookie('orderList',JSON.stringify(orderList));
+			window.location.href = '/login';
+		}
+	}
+</script>
+
+<div class="cart-items container">
+
+	<h1 id="nothingInCartMsg"></h1>
+	<table class="table table-striped" id="orderTable">
+	</table>
+	<h4 id="totalCost">Total Cost : 
+		<script>
+			$(document).ready(function() {
+			var res = '{{restaurants|tojson}}';
+				res = $.parseJSON(res);
+			console.log('res');
+			console.log(res);
+			var orders = getCookie('orderList');
+			orders = $.parseJSON(orders);
+			console.log('hye yo');
+			console.log(orders[0]);
+			var totalAmnt = parseInt(getCookie('totalAmnt'),10);
+			
+			var restaurantPresent = [];
+				for(var i=0;i<res.length;i++){
+					restaurantPresent.push(0);
+				}
+				console.log('len ' + orders.length);
+				var max_del_charge = 0;
+				var total_del_charge = 0;
+				for(var i=0;i<orders.length;i++){
+					restaurantPresent[parseInt(orders[i].restaurant_id)] = 1;
+					console.log('adf' + parseInt(orders[i].restaurant_id));
+					console.log(res[parseInt(orders[i].restaurant_id)]);
+					console.log('iop' +res[parseInt(orders[i].restaurant_id)].CHARGES);
+					console.log('iop' +parseInt(res[parseInt(orders[i].restaurant_id)].CHARGES));
+
+					var current_charge = parseInt(res[parseInt(orders[i].restaurant_id)].CHARGES);
+					console.log('cc ' + current_charge);
+					if(max_del_charge < current_charge)
+						max_del_charge = current_charge;
+				}
+				console.log('res pres'); 
+				console.log(restaurantPresent);
+
+				console.log(restaurantPresent.length);
+
+				for(var i=0;i<restaurantPresent.length;i++){
+					if(restaurantPresent[i]==1)
+						total_del_charge += res[i].CHARGES/2;	
+				}
+				total_del_charge += max_del_charge/2;
+				var payable_amnt = totalAmnt + total_del_charge;
+				console.log(payable_amnt + '=' + totalAmnt + "+" + total_del_charge);
+				
+				$("#totalCost").html("Total Cost : " +payable_amnt + '=' + totalAmnt + "+" + total_del_charge);
+
+			});
+
+		</script>
+	</h4>
+	</br>
+	<button type="button" class="btn btn-danger" onclick="placeOrder()">Place Order</button>
+</div>
 <!-- checkout -->
 	<div class="contact-section" id="contact">
 			<div class="container">

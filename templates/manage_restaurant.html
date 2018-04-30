@@ -1,0 +1,120 @@
+
+
+
+
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jQuery Bootstable Plugin Example</title>
+<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css" rel="stylesheet" type="text/css">
+<style>
+.container { margin:150px auto;}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+		<h1>Pending Orders</h1>
+		<table id="pendingOrder" class="ui table">
+			<tr>
+				<th>Item Name</th>
+				<th>Quantity</th>
+				<th>User</th>
+			</tr>
+				{% for order in myOrder %}
+			<tr>
+				<td>{{order.name}}</td>
+				<td>{{order.cost}}</td>
+				<td>{{order.user}}</td>
+			</tr>
+				{% endfor %}
+		</table>
+		</br>	
+		<h1>Restaurant Details</h1> 
+		<table id="restaurantTable" class="ui table">
+			<tr>
+				<th>Restaurant Name</th>
+				<th>Location</th>
+				<th>Delivery Charges</th>
+				<th>Logo</th>
+			</tr>
+			<tr>
+				<td>{{restaurant.NAME}}</td>
+				<td>{{restaurant.LOCATION}}</td>
+				<td>{{restaurant.CHARGES}}</td>
+				<td>{{restaurant.LOGO}}</td>
+			</tr>
+		</table>
+	</br>
+		<h1>Menu</h1>
+		<table class="table table-bordered" id="menuTable">
+			<thead>
+			<tr>
+				<th>ITEM_ID</th>
+				<th>COST</th>
+				<th>TYPE</th>
+			</tr>
+			</thead>
+			<tbody>
+			{% for x in menu %}
+			<tr>
+				<td>{{x.ITEM_ID}}</td>
+				<td>{{x.COST}}</td>
+				<td>{{x.CUISINE_TYPE}}</td>
+			</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+		</br>
+		<button id="save" class="primary">save</button>
+	</div>
+
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/static/js/bootstable.js"></script>
+<script src="/static/js/jquery.tabletojson.min.js"></script>
+<script>
+ var update_res = function(menuTable,restaurantTable) {
+	var res_id = '{{restaurant.ID|tojson}}';
+	console.log('calling with ajax');
+	var urls = '/update_restaurant';
+	console.log(urls) 
+	var payload = {'menuTable':menuTable, 'restaurantTable':restaurantTable,'res_id':res_id}
+	console.log(payload);
+	$.ajax({
+	  type: "POST",
+	  url: urls,
+	  data: JSON.stringify(payload),
+	  success: function (res) {
+          console.log('success');
+          alert('Update successful');
+       }
+    });
+    console.log('after');
+ }
+
+
+
+ $('table').SetEditable();
+ $('#save').click(function(){
+ 	var menuTable = $('#menuTable').tableToJSON();
+ 	var restaurantTable = $('#restaurantTable').tableToJSON();
+
+ 	console.log('calling update_res');
+	update_res(menuTable,restaurantTable); 	
+ });
+
+
+</script>
+
+</body>
+</html>
+
