@@ -20,7 +20,9 @@
 <body>
 
 <div class="container">
-		<h1>Pending Orders</h1>
+		<img src='{{restaurant.LOGO}}' height="100px">
+		</br></br></br>
+		<h3>Pending Orders</h3>
 		<table id="pendingOrder" class="ui table">
 			<tr>
 				<th>Item Name</th>
@@ -36,7 +38,7 @@
 				{% endfor %}
 		</table>
 		</br>	
-		<h1>Restaurant Details</h1> 
+		<h3>Restaurant Details</h3> 
 		<table id="restaurantTable" class="ui table">
 			<tr>
 				<th>Restaurant Name</th>
@@ -52,7 +54,7 @@
 			</tr>
 		</table>
 	</br>
-		<h1>Menu</h1>
+		<h3>Menu</h3>
 		<table class="table table-bordered" id="menuTable">
 			<thead>
 			<tr>
@@ -72,10 +74,8 @@
 			</tbody>
 		</table>
 		</br>
-		<button id="save" class="primary">save</button>
+		<button id="save" type="button" class="btn-lg btn-primary">save</button>
 	</div>
-
-
 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
